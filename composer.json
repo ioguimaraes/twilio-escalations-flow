@@ -1,0 +1,40 @@
+{
+    "authors": [
+        {
+            "name": "Igor de Oliveira Guimarães",
+            "email": "ig.oliveragui@gmail.com",
+            "homepage": "https://ioguimaraes.com/"
+        }
+    ],
+    "name": "ioguimaraes/twilio-escalations-flow",
+    "type": "project",
+    "description": "Project management escalation flow to the twilio calls",
+    "keywords": ["calls", "twilio", "escalation", "flow"],
+    "license": "MIT",
+    "require": {
+        "php": "^7.4",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "vlucas/phpdotenv":"*",
+        "twilio/sdk": "^7.12"
+    },
+    "autoload": {
+        "psr-4": {
+            "EscalationClient\\": "src"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.packagist.org",
+            "options": {
+                "ssl": {
+                    "verify_peer": false,
+                    "allow_self_signed": true
+                }
+            }
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
