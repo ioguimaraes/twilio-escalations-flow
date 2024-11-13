@@ -8,6 +8,9 @@ namespace EscalationClient;
 use Twilio\Rest\Client as TwilioClient;
 use Twilio\TwiML\VoiceResponse;
 use Twilio\Exceptions\TwilioException;
+use EscalationClient\Escalation\EscalationValidator;
+use EscalationClient\Options\OptionsValidator;
+use EscalationClient\Message\MessageValidator;
 
 class EscalationClient
 {
@@ -25,10 +28,12 @@ class EscalationClient
     {
 
         if(empty($twilio_messages)) return json_encode(['status' => false, 'data' => 'Messages empty, please set standard messages and opts!']);
-        if(empty($twilio_options)) return json_encode(['status' => false, 'data' => 'Options empty, please set standard Options!']);
-        if(empty($numbers_escalation)) return json_encode(['status' => false, 'data' => 'Numbers Escalation empty, please set escalation flow!']);
+//        if(empty($twilio_options)) return json_encode(['status' => false, 'data' => 'Options empty, please set standard Options!']);
+//        if(empty($numbers_escalation)) return json_encode(['status' => false, 'data' => 'Numbers Escalation empty, please set escalation flow!']);
 
+        $messages = MessageValidator::validateMessages($twilio_messages);
 
+        print_r(is_object($messages));
 
     }
 

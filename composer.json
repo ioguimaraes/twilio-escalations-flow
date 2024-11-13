@@ -12,7 +12,7 @@
     "keywords": ["calls", "twilio", "escalation", "flow"],
     "license": "MIT",
     "require": {
-        "php": "^7.4",
+        "php": ">=7.4",
         "ext-curl": "*",
         "ext-json": "*",
         "vlucas/phpdotenv":"*",
